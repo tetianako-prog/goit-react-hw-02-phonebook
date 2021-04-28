@@ -4,8 +4,7 @@ import './ContactItem.scss';
 const ContactItem = ({ info, onDeleteContact }) => {
   return (
     <li className="ContactItem">
-      <span>{info.name}: </span>
-      <span>{info.number}</span>
+      {info.name}: {info.number}
       <button onClick={() => onDeleteContact(info.id)}>Delete</button>
     </li>
   );

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { v4 } from 'uuid';
-import ContactList from './components/contacts';
-import ContactForm from './components/form';
-import Filter from './components/filter';
+import ContactList from './Contacts';
+import ContactForm from './Form';
+import Filter from './Filter';
 
 class App extends Component {
   state = {
@@ -51,6 +51,7 @@ class App extends Component {
       contact.name.toLowerCase().includes(normalizedFilter),
     );
   };
+
   render() {
     const visibleContacts = this.getVisibleContacts();
     return (
