@@ -1,16 +1,7 @@
 import React from 'react';
 import { v4 } from 'uuid';
-import styled from 'styled-components';
-
-const FilterStyled = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 18px;
-  margin-bottom: 20px;
-  .label {
-    margin-bottom: 10px;
-  }
-`;
+import PropTypes from 'prop-types';
+import FilterStyled from './FilterStyled';
 
 const Filter = ({ value, onChange }) => {
   const filterId = v4();
@@ -22,6 +13,11 @@ const Filter = ({ value, onChange }) => {
       <input type="text" value={value} onChange={onChange} id={filterId} />
     </FilterStyled>
   );
+};
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Filter;
